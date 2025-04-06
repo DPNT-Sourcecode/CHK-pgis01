@@ -34,4 +34,3 @@ class CheckoutSolution:
                 
         
         return total
-
