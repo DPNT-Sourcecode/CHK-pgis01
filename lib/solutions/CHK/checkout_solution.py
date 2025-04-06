@@ -25,9 +25,10 @@ class CheckoutSolution:
         if checkout_items.get("E", 0) >= 2:
             pairs_of_E = checkout_items.get("E", 0)//2
             print("pairs" + str(pairs_of_E))
-            for e in range (0,pairs_of_E):
-                if checkout_items.get("E", 0) != 0:
-                    if "B" in checkout_items:
+            if pairs_of_E != 0:
+                for e in range (0,pairs_of_E):
+                
+                    if checkout_items.get("B", 0) != 0:
                         checkout_items["B"] -= 1
                         if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
                             del checkout_items["B"]
@@ -57,4 +58,5 @@ class CheckoutSolution:
                 total += count * items[item]
 
         return total
+
 
