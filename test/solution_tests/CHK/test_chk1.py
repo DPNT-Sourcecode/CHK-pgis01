@@ -3,7 +3,8 @@ from solutions.CHK.checkout_solution import CheckoutSolution
 
 class TestCheckout():
     def test_checkout1_correct(self):
-        assert CheckoutSolution().checkout("A,3A,B")==210
+        assert CheckoutSolution().checkout("AAAB")==210
 
-    def test_checkout1_correct(self):
-        assert CheckoutSolution().checkout("A,E")==-1
+    def test_checkout1_incorrect(self):
+        assert CheckoutSolution().checkout("a")==-1
+

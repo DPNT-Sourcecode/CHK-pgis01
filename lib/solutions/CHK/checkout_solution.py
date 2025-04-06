@@ -27,9 +27,9 @@ class CheckoutSolution:
         for item, count in checkout_items.items():
             if item == "A":
                 # if 5 or more A's, apply special offer
-                total += 5 (count // 5) * 200
+                total += (count // 5) * 200
                 remainder = (count % 5) 
-                
+
                 if remainder >= 3:
                     total += (remainder // 3) * 130 
                     remainder = remainder % 3
@@ -43,3 +43,4 @@ class CheckoutSolution:
                 
         
         return total
+
