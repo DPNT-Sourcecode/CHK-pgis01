@@ -52,4 +52,5 @@ class CheckoutSolution:
                 print("Bs: " + str(total ))
             else:
                 total += count * items[item]
+                print(item + str(total))
         return total
