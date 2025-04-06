@@ -32,6 +32,10 @@ class TestCheckout():
     def test_checkout4_1G_correct(self):
         assert CheckoutSolution().checkout("G")==20
 
+    def test_checkout4_2G_correct(self):
+        assert CheckoutSolution().checkout("GG")==40
+        
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
 
