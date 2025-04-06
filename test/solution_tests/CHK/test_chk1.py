@@ -8,9 +8,10 @@ class TestCheckout():
     def test_checkout2_correct(self):
         assert CheckoutSolution().checkout("EEEBBE")==160
 
-    def test_checkout2_correct(self):
+    def test_checkout3_correct(self):
         assert CheckoutSolution().checkout("ABCDECBAABCABBAAAEEAA")==665
         
 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
