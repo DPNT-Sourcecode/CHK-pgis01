@@ -17,14 +17,23 @@ class TestCheckout():
     def test_checkout2_1Ccorrect(self):
         assert CheckoutSolution().checkout("C")==20
 
-    def test_checkout1_2Ccorrect(self):
+    def test_checkout2_2Ccorrect(self):
         assert CheckoutSolution().checkout("CC")==40
 
-    def test_checkout1_1Dcorrect(self):
+    def test_checkout2_1Dcorrect(self):
         assert CheckoutSolution().checkout("D")==15
 
-    def test_checkout1_2Dcorrect(self):
+    def test_checkout2_2Dcorrect(self):
         assert CheckoutSolution().checkout("DD")==30
+
+    def test_checkout2_1Ecorrect(self):
+        assert CheckoutSolution().checkout("E")==40
+
+    def test_checkout2_2Ecorrect(self):
+        assert CheckoutSolution().checkout("EE")==80
+
+    def test_checkout2_2E1Bcorrect(self):
+        assert CheckoutSolution().checkout("EEB")==80
 
     def test_checkout1_5Acorrect(self):
         assert CheckoutSolution().checkout("A")==50
@@ -90,4 +99,5 @@ class TestCheckout():
 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
 
