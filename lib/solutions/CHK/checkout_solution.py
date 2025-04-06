@@ -12,7 +12,27 @@ class CheckoutSolution:
                  "C" : 20,
                  "D" : 15,
                  "E" : 40,
-                 "F" : 10
+                 "F" : 10,
+                 "G" : 20,
+                 "H" : 10,
+                 "I" : 35,
+                 "J" : 60,
+                 "K" : 80,
+                 "L" : 90,
+                 "M" : 15,
+                 "N" : 40,
+                 "O" : 10,
+                 "P" : 50,
+                 "Q" : 30,
+                 "R" : 50,
+                 "S" : 30,
+                 "T" : 20,
+                 "U" : 40,
+                 "V" : 50,
+                 "W" : 20,
+                 "X" :90,
+                 "Y" : 10,
+                 "Z" : 50
                  }
         
         checkout_items = {}
@@ -47,17 +67,15 @@ class CheckoutSolution:
                 total += (count // 5) * 200
                 remainder = (count % 5) 
 
-
                 if remainder >= 3:
                     total += (remainder // 3) * 130 
                     remainder = remainder % 3
 
-               
                 total += remainder * 50
 
             elif item == "B" and count >= 2:
                 total += (count // 2) * 45 + (count % 2)  * items[item]
-                
+
             elif item == "F" and count >= 3:
                 free_f = count // 3
                 total += (count-free_f) * items[item]
