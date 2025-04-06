@@ -46,7 +46,11 @@ class CheckoutSolution:
                           "U" : [(4, 120)],
                           "V" : [(3, 130), (2, 90)]
           }
+        
+        total = 0 #total price of checkout
 
+        # group offer items, ordered from most expensive to cheapest
+        group_offer_items = ["Z", "S", "T", "Y", "X"]
         checkout_items = {}
         
         for i in range (len(skus)):
@@ -54,7 +58,24 @@ class CheckoutSolution:
                 checkout_items[skus[i]] = 1 + checkout_items.get(skus[i], 0)
             else:
                 return -1
-            
+        
+        # check if group offer discount is applicable
+        grouped_items = []
+        for item in group_offer_items:
+            count = checkout_items.get(item, 0)
+            for i in range (count):
+                grouped_items.append(item)
+        # group the group offer items in 3s
+        num_groups = len(grouped_items) // 3
+        total += num_groups * 45
+
+        # remove item from checkout_items
+        for i in range (num_groups * 3):
+            item = grouped_items[i]
+            checkout_items[item] -= 1
+            if checkout_items[item] == 0:
+                del checkout_items[item]
+                
         # check whether 2E special offer applies
         if checkout_items.get("E", 0) >= 2:
             pairs_of_E = checkout_items.get("E", 0)//2
@@ -94,7 +115,7 @@ class CheckoutSolution:
         
         # check for any special offers
 
-        total = 0
+ 
         for item, count in checkout_items.items():
             # if item is in the special_offer dictionary
             if item in special_offers:
