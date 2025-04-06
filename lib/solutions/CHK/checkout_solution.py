@@ -43,7 +43,8 @@ class CheckoutSolution:
                           "K" : [(2, 150)],
                           "P" : [(5, 200)],
                           "Q" : [(3, 80)],
-                          "U" : [(3, 80)]
+                          "U" : [(3, 80)],
+                          "V" : [(3, 130), (2, 90)]
                          
 
         }
@@ -108,37 +109,9 @@ class CheckoutSolution:
                 total += count * items[item]
             else:
                 total += count * items[item]
-            # if item == "A":
-            #     # if 5 or more A's, apply special offer
-            #     total += (count // 5) * 200
-            #     remainder = (count % 5) 
-
-            #     if remainder >= 3:
-            #         total += (remainder // 3) * 130 
-            #         remainder = remainder % 3
-
-            #     total += remainder * items[item]
-
-            # elif item == "B":
-            #     total += (count // 2) * 45 + (count % 2)  * items[item]
-
-            # if item == "F":
-            #     free_f = count // 3
-            #     total += (count-free_f) * items[item]
-            
-            # elif item == "H":
-            #     total += (count // 10) * 80
-            #     remainder = (count % 10) 
-
-            #     if remainder >= 5:
-            #         total += (remainder // 5) * 45 
-            #         remainder = remainder % 5
-
-            #     total += remainder * items[item]
-
-            # else:
-            #     total += count * items[item]
+        
 
         return total
+
 
 
