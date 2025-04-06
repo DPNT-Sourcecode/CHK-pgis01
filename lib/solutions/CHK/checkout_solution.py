@@ -64,6 +64,17 @@ class CheckoutSolution:
                             if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
                                 del checkout_items["B"]
 
+            # check whether 3N offer applies
+            # 3N get 1 M free special offer applies
+            if checkout_items.get("N", 0) >= 3:
+                triplets_of_N = checkout_items.get("N", 0)//3
+                if triplets_of_N != 0:
+                    for n in range (0,triplets_of_N):
+                        if checkout_items.get("M", 0) != 0:
+                            checkout_items["M"] -= 1
+                            if checkout_items["M"] == 0: # delete M from dictionary so that it wont cause an error later on
+                                del checkout_items["M"]
+
 
             
 
@@ -113,7 +124,3 @@ class CheckoutSolution:
             #     total += count * items[item]
 
         return total
-
-
-
-

@@ -107,6 +107,15 @@ class TestCheckout():
     def test_checkout4_2M_correct(self):
         assert CheckoutSolution().checkout("MM")==30
 
+    def test_checkout4_1N_correct(self):
+        assert CheckoutSolution().checkout("N")==40
+
+    def test_checkout4_3N_correct(self):
+        assert CheckoutSolution().checkout("NNN")==120
+
+    def test_checkout4_3N1M_correct(self):
+        assert CheckoutSolution().checkout("NNNM")==120
+
     # def test_checkout1_correct(self):
     #     assert CheckoutSolution().checkout("AAAB")==160
 
@@ -123,9 +132,3 @@ class TestCheckout():
 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
-
-
-
-
-
-
