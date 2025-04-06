@@ -78,6 +78,7 @@ class CheckoutSolution:
 
             elif item == "F":
                 free_f = count // 3
+                print(items[item])
                 total += (count-free_f) * items[item]
             
             if item == "H":
@@ -94,5 +95,6 @@ class CheckoutSolution:
                 total += count * items[item]
 
         return total
+
 
 
