@@ -90,10 +90,10 @@ class TestCheckout():
         assert CheckoutSolution().checkout("JJ")==120
 
     def test_checkout4_1K_correct(self):
-        assert CheckoutSolution().checkout("K")==80
+        assert CheckoutSolution().checkout("K")==70
 
     def test_checkout4_2K_correct(self):
-        assert CheckoutSolution().checkout("KK")==150
+        assert CheckoutSolution().checkout("KK")==120
 
     def test_checkout4_1L_correct(self):
         assert CheckoutSolution().checkout("L")==90
@@ -205,19 +205,7 @@ class TestCheckout():
 
     def test_checkout4_long_string_correct(self):
         assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1880
-    # def test_checkout1_correct(self):
-    #     assert CheckoutSolution().checkout("AAAB")==160
-
-    # def test_checkout1_1_correct(self):
-    #     assert CheckoutSolution().checkout("EEEBBE")==160
-
-    # def test_checkout2E_correct(self):
-    #     assert CheckoutSolution().checkout("ABCDECBAABCABBAAAEEAA")==665
-        
-   
-
-
-
-
+ 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
