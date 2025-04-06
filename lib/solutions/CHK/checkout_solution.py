@@ -55,43 +55,41 @@ class CheckoutSolution:
             else:
                 return -1
             
-            # check whether 2E special offer applies
-            if checkout_items.get("E", 0) >= 2:
-                pairs_of_E = checkout_items.get("E", 0)//2
-                print("pairs" + str(pairs_of_E))
-                if pairs_of_E != 0:
-                    for e in range (0,pairs_of_E):
-                        if checkout_items.get("B", 0) != 0:
-                            checkout_items["B"] -= 1
-                            if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
-                                del checkout_items["B"]
+        # check whether 2E special offer applies
+        if checkout_items.get("E", 0) >= 2:
+            pairs_of_E = checkout_items.get("E", 0)//2
+            print("pairs" + str(pairs_of_E))
+            if pairs_of_E != 0:
+                for e in range (0,pairs_of_E):
+                    if checkout_items.get("B", 0) != 0:
+                        checkout_items["B"] -= 1
+                        if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
+                            del checkout_items["B"]
 
-            
+        # check whether 3N offer applies
+        # 3N get 1 M free 
+        if checkout_items.get("N", 0) >= 3:
+            triplets_of_N = checkout_items.get("N", 0)//3
+            if triplets_of_N != 0:
+                for n in range (0,triplets_of_N):
+                    if checkout_items.get("M", 0) != 0:
+                        checkout_items["M"] -= 1
+                        if checkout_items["M"] == 0: # delete M from dictionary so that it wont cause an error later on
+                            del checkout_items["M"]
 
-            # check whether 3N offer applies
-            # 3N get 1 M free 
-            if checkout_items.get("N", 0) >= 3:
-                triplets_of_N = checkout_items.get("N", 0)//3
-                if triplets_of_N != 0:
-                    for n in range (0,triplets_of_N):
-                        if checkout_items.get("M", 0) != 0:
-                            checkout_items["M"] -= 1
-                            if checkout_items["M"] == 0: # delete M from dictionary so that it wont cause an error later on
-                                del checkout_items["M"]
-
-            # check whether 3R offer applies
-            # 3R get 1Q free
-            if checkout_items.get("R", 0) >= 3:
-                triplets_of_R = checkout_items.get("R", 0)//3
-                if triplets_of_R != 0:
-                    for n in range (0,triplets_of_R):
-                        if checkout_items.get("Q", 0) != 0:
-                            checkout_items["Q"] -= 1
-                            if checkout_items["Q"] == 0: # delete M from dictionary so that it wont cause an error later on
-                                del checkout_items["Q"]
+        # check whether 3R offer applies
+        # 3R get 1Q free
+        if checkout_items.get("R", 0) >= 3:
+            triplets_of_R = checkout_items.get("R", 0)//3
+            if triplets_of_R != 0:
+                for n in range (0,triplets_of_R):
+                    if checkout_items.get("Q", 0) != 0:
+                        checkout_items["Q"] -= 1
+                        if checkout_items["Q"] == 0: # delete M from dictionary so that it wont cause an error later on
+                            del checkout_items["Q"]
 
 
-            
+        
 
         
         # check for any special offers
