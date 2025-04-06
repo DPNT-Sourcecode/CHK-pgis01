@@ -29,6 +29,7 @@ class CheckoutSolution:
                     checkout_items["B"] -= 1
                     if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
                         del checkout_items["B"]
+                    print("Bs: " checkout_items.get["B"])
         
         # check for any special offers
 
@@ -52,5 +53,5 @@ class CheckoutSolution:
                 print("Bs: " + str(total ))
             else:
                 total += count * items[item]
-                print(item + str(total))
+                print(item + str(items))
         return total
