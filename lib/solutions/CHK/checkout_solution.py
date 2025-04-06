@@ -59,6 +59,7 @@ class CheckoutSolution:
             else:
                 return -1
         
+        
         # check if group offer discount is applicable
         grouped_items = []
         for item in group_offer_items:
@@ -75,7 +76,8 @@ class CheckoutSolution:
             checkout_items[item] -= 1
             if checkout_items[item] == 0:
                 del checkout_items[item]
-                
+
+
         # check whether 2E special offer applies
         if checkout_items.get("E", 0) >= 2:
             pairs_of_E = checkout_items.get("E", 0)//2
@@ -129,3 +131,4 @@ class CheckoutSolution:
         
 
         return total
+
