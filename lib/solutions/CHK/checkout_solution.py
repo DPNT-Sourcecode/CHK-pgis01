@@ -10,7 +10,8 @@ class CheckoutSolution:
         items = {"A" : 50,
                  "B" : 30,
                  "C" : 20,
-                 "D" : 15}
+                 "D" : 15,
+                 "E" : 40}
         
         checkout_items = {}
         
@@ -24,9 +25,17 @@ class CheckoutSolution:
 
         total = 0
         for item, count in checkout_items.items():
-            if item == "A" and count >= 3:
-                # if 3 or more A's, apply special offer
-                total += (count // 3) * 130 + (count % 3)  * items[item]
+            if item == "A":
+                # if 5 or more A's, apply special offer
+                total += 5 (count // 5) * 200
+                remainder = (count % 5) 
+                
+                if remainder >= 3:
+                    total += (remainder // 3) * 130 
+                    remainder = remainder % 3
+               
+                total += remainder * 50
+
             elif item == "B" and count >= 2:
                 total += (count // 2) * 45 + (count % 2)  * items[item]
             else:
