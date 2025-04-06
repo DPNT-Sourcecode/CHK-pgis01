@@ -12,32 +12,24 @@ class CheckoutSolution:
                  "C" : 20,
                  "D" : 15}
         
-        special_offers = {"3A" : 130,
-                          "2B" : 45}
+        checkout_items = {}
+        for i in range (len(skus)):
+            if i in items:
+                checkout_items[skus[i]] = 1 + checkout_items.get(skus[i], 0)
+            else:
+                return -1
         
-        if skus == "":
-            return 0
-        
-        else: 
-            
-            skus_list = []
+        # check for any special offers
 
-            if " " in skus:
-                skus_list = skus.split(" ")
-            
-            if "," in skus:
-                skus_list = skus.split(",")
-
-
-
-            total = 0
-
-            for i in skus_list:
-                if i in items:
-                    total += items.get(i)
-                elif i in special_offers:
-                    total += special_offers.get(i)
-                else:
-                    return -1
+        total = 0
+        for item, count in checkout_items.items():
+            if item == "A" and count >= 3:
+                # if 3 or more A's, apply special offer
+                total += (count // 3) * 130 + (count % 3)  * items[item]
+            elif item == "B" and count >= 2:
+                total += (count // 2) * 45 + (count % 2)  * items[item]
+            else:
+                total += count * items[item]
+                
         
         return total
