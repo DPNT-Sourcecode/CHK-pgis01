@@ -7,4 +7,3 @@ class TestCheckout():
 
     def test_checkout1_correct(self):
         assert CheckoutSolution().checkout("A,E")==-1
-
