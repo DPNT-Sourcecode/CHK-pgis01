@@ -73,10 +73,10 @@ class CheckoutSolution:
 
                 total += remainder * 50
 
-            elif item == "B" and count >= 2:
+            elif item == "B":
                 total += (count // 2) * 45 + (count % 2)  * items[item]
 
-            elif item == "F" and count >= 3:
+            elif item == "F":
                 free_f = count // 3
                 total += (count-free_f) * items[item]
 
@@ -84,3 +84,4 @@ class CheckoutSolution:
                 total += count * items[item]
 
         return total
+
