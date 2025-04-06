@@ -45,9 +45,7 @@ class CheckoutSolution:
                           "Q" : [(3, 80)],
                           "U" : [(4, 120)],
                           "V" : [(3, 130), (2, 90)]
-                         
-
-        }
+          }
 
         checkout_items = {}
         
@@ -112,7 +110,3 @@ class CheckoutSolution:
         
 
         return total
-
-
-
-
