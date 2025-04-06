@@ -201,10 +201,10 @@ class TestCheckout():
         assert CheckoutSolution().checkout("ZZ")==42
 
     def test_checkout4_whole_alphabet_correct(self):
-        assert CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ")==1646
+        assert CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ")==1602
 
     def test_checkout4_long_string_correct(self):
-        assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1646
+        assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1602
 
     def test_checkout5_STX_correct(self):
         assert CheckoutSolution().checkout("STX")==45
@@ -217,7 +217,6 @@ class TestCheckout():
 
     def test_checkout5_SXY_correct(self):
         assert CheckoutSolution().checkout("SXY")==45
-
 
     def test_checkout5_SXZ_correct(self):
         assert CheckoutSolution().checkout("SXZ")==45
@@ -242,7 +241,7 @@ class TestCheckout():
 
 
     def test_checkout5_SSTX_correct(self):
-        assert CheckoutSolution().checkout("SSTX")==65
+        assert CheckoutSolution().checkout("SSTX")==62
  
     def test_checkout5_STXXYZ_correct(self):
         assert CheckoutSolution().checkout("STXXYZ")==90
@@ -256,8 +255,9 @@ class TestCheckout():
     def test_checkout5_STYTXYXYZ_correct(self):
         assert CheckoutSolution().checkout("STYTXYXYZ")==135
 
-
     def test_checkout5_SXY_correct(self):
         assert CheckoutSolution().checkout("SXY")==45
+
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
