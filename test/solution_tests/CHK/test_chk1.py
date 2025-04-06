@@ -31,5 +31,3 @@ class TestCheckout():
         
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
-
-
