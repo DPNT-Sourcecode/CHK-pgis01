@@ -14,24 +14,30 @@ class CheckoutSolution:
         
         special_offers = {"3A" : 130,
                           "2B" : 45}
-
-        if " " in skus:
-            skus_list = skus.split(" ")
         
-        if "," in skus:
-            skus_list = skus.split(",")
-
-        if "":
+        if skus == "":
             return 0
+        
+        else: 
+            
+            skus_list = []
 
-        total = 0
+            if " " in skus:
+                skus_list = skus.split(" ")
+            
+            if "," in skus:
+                skus_list = skus.split(",")
 
-        for i in skus_list:
-            if i in items:
-                total += items.get(i)
-            elif i in special_offers:
-                total += special_offers.get(i)
-            else:
-                return -1
+
+
+            total = 0
+
+            for i in skus_list:
+                if i in items:
+                    total += items.get(i)
+                elif i in special_offers:
+                    total += special_offers.get(i)
+                else:
+                    return -1
         
         return total
