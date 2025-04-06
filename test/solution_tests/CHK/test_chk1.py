@@ -1,4 +1,4 @@
-from solutions.CHK.checkout_solution import CheckoutSolution
+from lib.solutions.CHK.checkout_solution import CheckoutSolution
 
 
 class TestCheckout():
