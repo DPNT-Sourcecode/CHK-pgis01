@@ -50,7 +50,16 @@ class CheckoutSolution:
             else:
                 return -1
             
-
+            # check whether 2E special offer applies
+            if checkout_items.get("E", 0) >= 2:
+                pairs_of_E = checkout_items.get("E", 0)//2
+                print("pairs" + str(pairs_of_E))
+                if pairs_of_E != 0:
+                    for e in range (0,pairs_of_E):
+                        if checkout_items.get("B", 0) != 0:
+                            checkout_items["B"] -= 1
+                            if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
+                                del checkout_items["B"]
 
 
             
@@ -62,22 +71,11 @@ class CheckoutSolution:
         for item, count in checkout_items.items():
             # if item is in the special_offer dictionary
             if item in special_offers:
-                # check whether 2E special offer applies
-                if checkout_items.get("E", 0) >= 2:
-                    pairs_of_E = checkout_items.get("E", 0)//2
-                    print("pairs" + str(pairs_of_E))
-                    if pairs_of_E != 0:
-                        for e in range (0,pairs_of_E):
-                            if checkout_items.get("B", 0) != 0:
-                                checkout_items["B"] -= 1
-                                if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
-                                    del checkout_items["B"]
-                else:
-                    for offer_quantity, offer_price in special_offers[item]:
-                        offer_count = count // offer_quantity
-                        total += offer_count * offer_price
-                        count %= offer_quantity
-                    total += count * items[item]
+                for offer_quantity, offer_price in special_offers[item]:
+                    offer_count = count // offer_quantity
+                    total += offer_count * offer_price
+                    count %= offer_quantity
+                total += count * items[item]
             else:
                 total += count * items[item]
             # if item == "A":
