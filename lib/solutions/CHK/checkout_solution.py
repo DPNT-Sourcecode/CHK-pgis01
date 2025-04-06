@@ -70,7 +70,7 @@ class CheckoutSolution:
                 if remainder >= 3:
                     total += (remainder // 3) * 130 
                     remainder = remainder % 3
-                print(items[item])
+
                 total += remainder * 50
 
             elif item == "B":
@@ -78,8 +78,7 @@ class CheckoutSolution:
 
             elif item == "F":
                 free_f = count // 3
-                print(items[item])
-                total += (count-free_f) * items[item]
+                total += (count-free_f) * 10
             
             if item == "H":
                 total += (count // 10) * 80
@@ -89,12 +88,13 @@ class CheckoutSolution:
                     total += (remainder // 5) * 45 
                     remainder = remainder % 5
 
-                total += remainder * items[item]
+                total += remainder * 50
 
             else:
                 total += count * items[item]
 
         return total
+
 
 
 
