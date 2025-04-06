@@ -144,10 +144,10 @@ class TestCheckout():
         assert CheckoutSolution().checkout("RRRQ")==150
 
     def test_checkout4_1S_correct(self):
-        assert CheckoutSolution().checkout("S")==30
+        assert CheckoutSolution().checkout("S")==20
 
     def test_checkout4_2S_correct(self):
-        assert CheckoutSolution().checkout("SS")==60
+        assert CheckoutSolution().checkout("SS")==40
 
     def test_checkout4_1T_correct(self):
         assert CheckoutSolution().checkout("T")==20
@@ -183,29 +183,30 @@ class TestCheckout():
         assert CheckoutSolution().checkout("WW")==40
 
     def test_checkout4_1X_correct(self):
-        assert CheckoutSolution().checkout("X")==90
+        assert CheckoutSolution().checkout("X")==17
 
     def test_checkout4_2X_correct(self):
-        assert CheckoutSolution().checkout("XX")==180
+        assert CheckoutSolution().checkout("XX")==34
 
     def test_checkout4_1Y_correct(self):
-        assert CheckoutSolution().checkout("Y")==10
+        assert CheckoutSolution().checkout("Y")==20
 
     def test_checkout4_2Y_correct(self):
-        assert CheckoutSolution().checkout("YY")==20
+        assert CheckoutSolution().checkout("YY")==40
 
     def test_checkout4_1Z_correct(self):
-        assert CheckoutSolution().checkout("Z")==50
+        assert CheckoutSolution().checkout("Z")==21
 
     def test_checkout4_2Z_correct(self):
-        assert CheckoutSolution().checkout("ZZ")==100
+        assert CheckoutSolution().checkout("ZZ")==42
 
     def test_checkout4_whole_alphabet_correct(self):
-        assert CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ")==1880
+        assert CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ")==1646
 
     def test_checkout4_long_string_correct(self):
-        assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1880
+        assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1646
  
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
 
