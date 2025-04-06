@@ -11,7 +11,9 @@ class CheckoutSolution:
                  "B" : 30,
                  "C" : 20,
                  "D" : 15,
-                 "E" : 40}
+                 "E" : 40,
+                 "F" : 10
+                 }
         
         checkout_items = {}
         
@@ -27,11 +29,13 @@ class CheckoutSolution:
             print("pairs" + str(pairs_of_E))
             if pairs_of_E != 0:
                 for e in range (0,pairs_of_E):
-                
                     if checkout_items.get("B", 0) != 0:
                         checkout_items["B"] -= 1
                         if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
                             del checkout_items["B"]
+
+
+            
 
         
         # check for any special offers
@@ -53,6 +57,10 @@ class CheckoutSolution:
 
             elif item == "B" and count >= 2:
                 total += (count // 2) * 45 + (count % 2)  * items[item]
+                
+            elif item == "F" and count >= 3:
+                free_f = count // 3
+                total += (count-free_f) * items[item]
 
             else:
                 total += count * items[item]

@@ -20,9 +20,16 @@ class TestCheckout():
     def test_checkout3_2F_correct(self):
         assert CheckoutSolution().checkout("FFF")==20
 
-    def test_checkout3_2F_correct(self):
+    def test_checkout3_3F_correct(self):
         assert CheckoutSolution().checkout("AFFF")==70
+        
+    def test_checkout3_4F_correct(self):
+        assert CheckoutSolution().checkout("AFFFFF")==90
+
+    def test_checkout3_5F_correct(self):
+        assert CheckoutSolution().checkout("FFFF")==30
         
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
 
