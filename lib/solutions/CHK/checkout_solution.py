@@ -20,6 +20,13 @@ class CheckoutSolution:
                 checkout_items[skus[i]] = 1 + checkout_items.get(skus[i], 0)
             else:
                 return -1
+            
+        # check whether 2E special offer applies
+        if checkout_items.get("E", 0) >= 2:
+            if "B" in checkout_items:
+                checkout_items["B"] -= 1
+                if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
+                    del checkout_items["B"]
         
         # check for any special offers
 
