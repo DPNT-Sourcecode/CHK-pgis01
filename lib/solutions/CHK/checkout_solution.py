@@ -94,23 +94,24 @@ class CheckoutSolution:
             # elif item == "B":
             #     total += (count // 2) * 45 + (count % 2)  * items[item]
 
-            if item == "F":
-                free_f = count // 3
-                total += (count-free_f) * items[item]
+            # if item == "F":
+            #     free_f = count // 3
+            #     total += (count-free_f) * items[item]
             
-            elif item == "H":
-                total += (count // 10) * 80
-                remainder = (count % 10) 
+            # elif item == "H":
+            #     total += (count // 10) * 80
+            #     remainder = (count % 10) 
 
-                if remainder >= 5:
-                    total += (remainder // 5) * 45 
-                    remainder = remainder % 5
+            #     if remainder >= 5:
+            #         total += (remainder // 5) * 45 
+            #         remainder = remainder % 5
 
-                total += remainder * items[item]
+            #     total += remainder * items[item]
 
-            else:
-                total += count * items[item]
+            # else:
+            #     total += count * items[item]
 
         return total
+
 
 
