@@ -38,17 +38,18 @@ class CheckoutSolution:
                 # if 5 or more A's, apply special offer
                 total += (count // 5) * 200
                 remainder = (count % 5) 
+                print("As: " + str(total) + "remainder:" + str(remainder))
 
                 if remainder >= 3:
                     total += (remainder // 3) * 130 
                     remainder = remainder % 3
+                    print("As: " + str(total) + "remainder:" + str(remainder))
                
                 total += remainder * 50
 
             elif item == "B" and count >= 2:
                 total += (count // 2) * 45 + (count % 2)  * items[item]
+                print("Bs: " + str(total ))
             else:
                 total += count * items[item]
-                
-        
         return total
