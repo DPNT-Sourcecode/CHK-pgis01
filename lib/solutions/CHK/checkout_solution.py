@@ -94,8 +94,3 @@ class CheckoutSolution:
                 total += count * items[item]
 
         return total
-
-
-
-
-
