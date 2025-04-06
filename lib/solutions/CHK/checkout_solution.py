@@ -43,7 +43,7 @@ class CheckoutSolution:
                           "K" : [(2, 150)],
                           "P" : [(5, 200)],
                           "Q" : [(3, 80)],
-                          "U" : [(3, 80)],
+                          "U" : [(4, 120)],
                           "V" : [(3, 130), (2, 90)]
                          
 
@@ -112,6 +112,7 @@ class CheckoutSolution:
         
 
         return total
+
 
 
 
