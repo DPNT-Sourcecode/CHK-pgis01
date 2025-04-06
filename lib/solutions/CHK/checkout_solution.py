@@ -35,6 +35,13 @@ class CheckoutSolution:
                  "Z" : 50
                  }
         
+        # (quantity, price offer)
+        special_offers = {"A" : [(3, 130), (5, 200)],
+                          "B" : [(2, 35)]
+                         
+
+        }
+
         checkout_items = {}
         
         for i in range (len(skus)):
@@ -62,16 +69,23 @@ class CheckoutSolution:
 
         total = 0
         for item, count in checkout_items.items():
-            if item == "A":
-                # if 5 or more A's, apply special offer
-                total += (count // 5) * 200
-                remainder = (count % 5) 
+            # if item is in the special_offer dictionary
+            if item in special_offers:
+                for offer_quantity, offer_price in special_offers[item]:
+                    offer_count = count // offer_quantity
+                    total += offer_count * offer_price
+                    count %= offer_quantity
+                total += count * items[item]
+            # if item == "A":
+            #     # if 5 or more A's, apply special offer
+            #     total += (count // 5) * 200
+            #     remainder = (count % 5) 
 
-                if remainder >= 3:
-                    total += (remainder // 3) * 130 
-                    remainder = remainder % 3
+            #     if remainder >= 3:
+            #         total += (remainder // 3) * 130 
+            #         remainder = remainder % 3
 
-                total += remainder * items[item]
+            #     total += remainder * items[item]
 
             elif item == "B":
                 total += (count // 2) * 45 + (count % 2)  * items[item]
