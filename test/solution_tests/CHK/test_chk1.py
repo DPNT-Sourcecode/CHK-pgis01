@@ -261,6 +261,3 @@ class TestCheckout():
         assert CheckoutSolution().checkout("SXY")==45
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
-
-
-
