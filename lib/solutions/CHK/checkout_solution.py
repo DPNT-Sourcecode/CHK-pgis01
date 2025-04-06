@@ -13,8 +13,9 @@ class CheckoutSolution:
                  "D" : 15}
         
         checkout_items = {}
+        skus = skus.upper()
         for i in range (len(skus)):
-            if i in items:
+            if skus[i] in items:
                 checkout_items[skus[i]] = 1 + checkout_items.get(skus[i], 0)
             else:
                 return -1
