@@ -4,6 +4,18 @@ from lib.solutions.CHK.checkout_solution import CheckoutSolution
 class TestCheckout():
     def test_checkout1_1Acorrect(self):
         assert CheckoutSolution().checkout("A")==50
+
+    def test_checkout1_3Acorrect(self):
+        assert CheckoutSolution().checkout("AAA")==150
+
+    def test_checkout1_1Bcorrect(self):
+        assert CheckoutSolution().checkout("B")==30
+    
+    def test_checkout1_2Bcorrect(self):
+        assert CheckoutSolution().checkout("BB")==45
+
+    def test_checkout1_5Acorrect(self):
+        assert CheckoutSolution().checkout("A")==50
     # def test_checkout1_correct(self):
     #     assert CheckoutSolution().checkout("AAAB")==160
 
@@ -66,5 +78,3 @@ class TestCheckout():
 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
-
-

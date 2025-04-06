@@ -37,7 +37,7 @@ class CheckoutSolution:
         
         # (quantity, price offer)
         special_offers = {"A" : [(3, 130), (5, 200)],
-                          "B" : [(2, 35)]
+                          "B" : [(2, 45)]
                          
 
         }
@@ -112,6 +112,3 @@ class CheckoutSolution:
             #     total += count * items[item]
 
         return total
-
-
-
