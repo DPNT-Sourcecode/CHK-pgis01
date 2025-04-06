@@ -21,6 +21,9 @@ class CheckoutSolution:
         if "," in skus:
             skus_list = skus.split(",")
 
+        if "":
+            return 0
+
         total = 0
 
         for i in skus_list:
