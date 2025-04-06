@@ -1,4 +1,4 @@
-from lib.solutions.CHK.checkout_solution import CheckoutSolution
+from solutions.CHK.checkout_solution import CheckoutSolution
 
 
 class TestCheckout():
@@ -7,3 +7,4 @@ class TestCheckout():
 
     def test_checkout1_correct(self):
         assert CheckoutSolution().checkout("A,E")==-1
+
