@@ -42,7 +42,8 @@ class CheckoutSolution:
                           "H" : [(10, 80), (5, 45)],
                           "K" : [(2, 150)],
                           "P" : [(5, 200)],
-                          "Q" : [(3, 80)]
+                          "Q" : [(3, 80)],
+                          "U" : [(3, 80)]
                          
 
         }
@@ -139,4 +140,5 @@ class CheckoutSolution:
             #     total += count * items[item]
 
         return total
+
 
