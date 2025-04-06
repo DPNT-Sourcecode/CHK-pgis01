@@ -23,10 +23,12 @@ class CheckoutSolution:
             
         # check whether 2E special offer applies
         if checkout_items.get("E", 0) >= 2:
-            if "B" in checkout_items:
-                checkout_items["B"] -= 1
-                if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
-                    del checkout_items["B"]
+            pairs_of_E = checkout_items.get("E", 0)
+            for e in range (0,pairs_of_E-1):
+                if "B" in checkout_items:
+                    checkout_items["B"] -= 1
+                    if checkout_items["B"] == 0: # delete B from dictionary so that it wont cause an error later on
+                        del checkout_items["B"]
         
         # check for any special offers
 
@@ -50,3 +52,4 @@ class CheckoutSolution:
                 
         
         return total
+
