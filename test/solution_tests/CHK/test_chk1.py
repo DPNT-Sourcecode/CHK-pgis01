@@ -199,6 +199,12 @@ class TestCheckout():
 
     def test_checkout4_2Z_correct(self):
         assert CheckoutSolution().checkout("ZZ")==100
+
+    def test_checkout4_whole_alphabet_correct(self):
+        assert CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ")==1880
+
+    def test_checkout4_long_string_correct(self):
+        assert CheckoutSolution().checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH")==1880
     # def test_checkout1_correct(self):
     #     assert CheckoutSolution().checkout("AAAB")==160
 
@@ -215,6 +221,7 @@ class TestCheckout():
 
     def test_checkout1_incorrect(self):
         assert CheckoutSolution().checkout("a")==-1
+
 
 
 
